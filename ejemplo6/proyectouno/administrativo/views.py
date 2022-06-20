@@ -6,9 +6,5 @@ from django.shortcuts import render
 # importar las clases de models.py
 from administrativo.models import Matricula
 
-def index(request):
-    """
-    """
-    matriculas = Matricula.objects.all()
-    informacion_template = {'matriculas': matriculas, 'numero_matriculas': len(matriculas)}
-    return render(request, 'index.html', informacion_template)
+# vista que permita presesentar las matriculas
+# el nombre de la vista es index.
