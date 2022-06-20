@@ -1,0 +1,14 @@
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from django.template import RequestContext
+from django.shortcuts import render
+
+# importar las clases de models.py
+from administrativo.models import Matricula
+
+def index(request):
+    """
+    """
+    matriculas = Matricula.objects.all()
+    informacion_template = {'matriculas': matriculas, 'numero_matriculas': len(matriculas)}
+    return render(request, 'index.html', informacion_template)
